@@ -1,0 +1,42 @@
+---
+title: 'Example 4: Brain and Weight Data'
+output:
+  pdf_document: default
+  html_document: default
+---
+
+Table 7 presents the brain weight (in grams) and the body weight (in kilograms) of 28 animals (this sample was taken from larger data sets in Weisberg 1980 and Jerison 1973). It is to be investigated whether a larger brain is required to govern a heavier body. A clear picture of the relationship between the logarithms (to the base 10) of these measurements is shown in Figure 7. This logarithmic transformation was necessary because plotting the original measurements would fail to represent either the smaller or the larger measurements. Indeed, both original variables range over several orders of magnitude. A linear fit to this transformed data would be equivalent to a relationship of the form
+
+$$\hat{y} = \hat{\Theta}'_2x^{\hat{\Theta_1}}$$
+
+between brain weight (y) and body weight (x). 
+
+```{r, echo = FALSE, warning=FALSE}
+library(MASS)
+library(ggplot2)
+library(kableExtra)
+```
+
+
+```{r, echo = FALSE}
+plot(log10(brain)~log10(body), Animals)
+
+fit <- lm(log10(brain)~log10(body), Animals)
+
+abline(fit)
+```
+
+Looking at Figure 7, it seems that this transformation makes things more linear. Another important advantage of the log scale is that the heteroscedasticity disappears. 
+
+The LS fit is given by
+
+$$\log \hat{y} = 0.49601 \log x + 1.10957$$
+
+(dashed line in Figure 7). The standard error associated with the slope equals 0.0782, and that of the intercept term is 0.1794. In Section 3, we explained how to construct a confidence interval for the unknown regression parameters. For the present example, n = 28 and p = 2, so one has to use the 97.5% quantile of the t-distribution with 26 degrees of freedom, which equals 2.0555. Using the LS results, a 95% confidence interval for the slope is given by t0.3353; 0.65673. The RLS yields the solid line in Figure 7, which is a fit with a steeper slope:
+
+$$\log \hat{y} = 0.75092 \log x + 0.86914$$
+
+```{r, echo=FALSE}
+kable(Animals,caption = "Table 7. Body and Brain Weight for 28 Animals", col.names = c("Body Weight (kg)","Brain Weight (g)")) |>
+  kable_classic()
+```

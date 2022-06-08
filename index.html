@@ -1,0 +1,239 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>RMarkdown für Projektberichte</title>
+
+		<link rel="stylesheet" href="revealjs/dist/reset.css">
+		<link rel="stylesheet" href="revealjs/dist/reveal.css">
+		<link rel="stylesheet" href="revealjs/dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="revealjs/plugin/highlight/monokai.css">
+		<style>
+			.card{
+				box-shadow: 5px 10px #888888;
+			}
+			.highlight{
+				color: #E76F51;
+			}
+
+			.filename{
+				display:inline-block; 
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<section>
+						<h1>Das Problem</h1>
+					</section>
+					<section>
+						Reproducibility?
+					</section>
+					<section data-background-iframe="https://www.youtube.com/embed/s3JldKoA0zw?start=18">
+
+					</section>
+	
+					<section>
+						<div>
+							<img data-src="report10.png" style="width: 40%;" class="card">
+							<img data-src="report11.png" style="width: 40%;" class="card">
+						</div>
+					</section>
+					<section>
+						<div>
+							<img data-src="report15.png" style="width: 40%;" class="card">
+							<img data-src="report16.png" style="width: 40%;" class="card">
+						</div>
+					</section>
+
+					<section>
+						Web 2.0?
+					</section>
+					<section>
+						<img data-src="Din-1930233409.jpeg" class="card">
+
+						<aside class="notes">
+							the German standard DIN 476 was published on 18 August 1922
+						</aside>
+					</section>
+					
+				</section>
+
+				<section>
+					<section>
+						<h1>Die Lösung</h1>
+					</section>
+					<section>
+						<img data-src="knuth.jpg" alt="" style="width: 40%;">
+					</section>
+					<section>
+						<div>
+							<img data-src="rmarkdown-logo.png" style="width: 300px;" alt="">
+							<img data-src="bookdown-logo.png"  style="width: 300px;" alt="">
+
+						</div>
+						<ul style="list-style-type: none">
+							<li>PANDOC</li>
+							<li>KNITR</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Was man tun muss</h1>
+					</section>
+					<section data-auto-animate>
+						<div class="filename" data-id="filename">brain-vs-bodymass.R</div>
+						<pre data-id="animals"><code data-trim class="text" data-line-numbers="">
+							library(MASS)
+
+							plot(log10(brain)~log10(body), Animals)
+
+							fit <- lm(log10(brain)~log10(body), Animals)
+
+							abline(fit)
+						</code></pre>
+					</section>
+					<section data-auto-animate>
+						<div class="filename" data-id="filename">brain-vs-bodymass.R</div><div data-id="filename2" class="filename highlight">md</div>
+						<pre data-id="animals"><code data-trim class="text" data-line-numbers="">
+							```{r}
+							library(MASS)
+
+							plot(log10(brain)~log10(body), Animals)
+							
+							fit <- lm(log10(brain)~log10(body), Animals)
+							
+							abline(fit)
+							```
+						</code></pre>
+					</section>
+					<section data-auto-animate>
+						<div class="filename" data-id="filename">brain-vs-bodymass.R</div><div data-id="filename2" class="filename highlight">md</div>
+						<pre data-id="animals"><code data-trim class="text" data-line-numbers="">
+							---
+							title: "Brain- vs. body mass"
+							output: html_document
+							---
+
+
+							```{r}
+							library(MASS)
+
+							plot(log10(brain)~log10(body), Animals)
+							
+							fit <- lm(log10(brain)~log10(body), Animals)
+							
+							abline(fit)
+							```
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Was man bekommt</h1>
+					</section>
+
+					<section>
+						<img data-src="brain-vs-body-html.png" style="width: 60%;">
+					</section>
+
+					<section>
+						<img data-src="im-still-feeling-skeptical-saturday-night-live.gif" alt="">
+					</section>
+
+					<section>
+						<div>
+							<img data-src="simpleregression37.png" style="width: 40%;" class="card">
+							<img data-src="simpleregression38.png" style="width: 40%;" class="card">
+						</div>
+						<small> J. Rousseeuw, Annick M. Leroy (1987): Robust Regression and Outlier Detection </small>
+					</section>
+
+					<section>
+						<pre><code data-trim class="text" data-line-numbers="">
+							---
+							title: "Example 4: Brain and Weight Data"
+							output: html_document
+							---
+							
+							Table 7 presents the brain weight (in grams) and the body weight (in kilograms) of 28 animals. (This sample was taken from larger data sets in Weisberg 1980 and Jerison 1973.) It is to be investigated whether a larger brain is required to govern a heavier body. A clear picture of the relationship between the logarithms (to the base 10) of these measurements is shown in Figure 7. This logarithmic transformation was necessary because plotting the original measurements would fail to represent either the smaller or the larger measurements. Indeed, both original variables range over several orders of magnitude. A linear fit to this transformed data would be equivalent to a relationship of the form
+							
+							$$\hat{y} = \hat{\Theta}'_2x^{\hat{\Theta_1}}$$
+							
+							between brain weight (y) and body weight (x). 
+							
+							```{r, echo = FALSE, warning=FALSE}
+							library(MASS)
+							library(ggplot2)
+							library(kableExtra)
+							```
+							
+							
+							```{r, echo = FALSE}
+							plot(log10(brain)~log10(body), Animals)
+							
+							fit <- lm(log10(brain)~log10(body), Animals)
+							
+							abline(fit)
+							```
+							
+							Looking at Figure 7, it seems that this transformation makes things more linear. Another important advantage of the log scale is that the heteroscedasticity disappears. 
+							
+							The LS fit is given by
+							
+							$$\log \hat{y} = 0.49601 \log x + 1.10957$$
+							
+							(dashed line in Figure 7). The standard error associated with the slope equals 0.0782, and that of the intercept term is 0.1794. In Section 3, we explained how to construct a confidence interval for the unknown regression parameters. For the present example, n = 28 and p = 2, so one has to use the 97.5% quantile of the t-distribution with 26 degrees of freedom, which equals 2.0555. Using the LS results, a 95% confidence interval for the slope is given by t0.3353; 0.65673. The RLS yields the solid line in Figure 7, which is a fit with a steeper slope:
+							
+							$$\log \hat{y} = 0.75092 \log x + 0.86914$$
+							
+							```{r, echo=FALSE}
+							kable(Animals,caption = "Table 7. Body and Brain Weight for 28 Animals", col.names = c("Body Weight (kg)","Brain Weight (g)")) |>
+							kable_classic()
+							```
+							
+						</code></pre>
+					</section>
+
+					<!-- Add examples of outputs -->
+					<section>
+						<img data-src="rmarkdownflow.png" alt="">
+					</section>
+
+					<!-- Explain the workflow (Rmarkdown, knitr, pandoc)-->
+					<!-- How does bookdown extend this?-->
+
+
+
+					<section>
+						<img data-src="rstudio.png" alt="">
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="revealjs/dist/reveal.js"></script>
+		<script src="revealjs/plugin/notes/notes.js"></script>
+		<script src="revealjs/plugin/markdown/markdown.js"></script>
+		<script src="revealjs/plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>

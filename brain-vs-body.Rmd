@@ -1,0 +1,15 @@
+---
+title: "Brain- vs. body mass"
+output: html_document
+---
+
+```{r}
+library(MASS)
+
+plot(log10(brain)~log10(body), Animals)
+
+fit <- lm(log10(brain)~log10(body), Animals)
+
+abline(fit)
+```
+
