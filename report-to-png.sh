@@ -7,3 +7,4 @@ pdftoppm report.pdf report15 -singlefile -f 15 -png
 pdftoppm report.pdf report16 -singlefile -f 16 -png
 pdftoppm simple_regression.pdf simpleregression37 -singlefile -f 37 -png
 pdftoppm simple_regression.pdf simpleregression38 -singlefile -f 38 -png
+pdftoppm brain-vs-body-2.pdf brain-vs-body-2 -png

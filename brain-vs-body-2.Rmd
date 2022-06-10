@@ -1,7 +1,6 @@
 ---
 title: 'Example 4: Brain and Weight Data'
 output:
-  pdf_document: default
   html_document: default
 ---
 
@@ -17,7 +16,6 @@ library(ggplot2)
 library(kableExtra)
 ```
 
-
 ```{r, echo = FALSE}
 plot(log10(brain)~log10(body), Animals)
 
@@ -25,6 +23,7 @@ fit <- lm(log10(brain)~log10(body), Animals)
 
 abline(fit)
 ```
+
 
 Looking at Figure 7, it seems that this transformation makes things more linear. Another important advantage of the log scale is that the heteroscedasticity disappears. 
 

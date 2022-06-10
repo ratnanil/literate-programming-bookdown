@@ -16,6 +16,14 @@
 			.card{
 				box-shadow: 5px 10px #888888;
 			}
+
+			.shadow{
+				text-shadow: 20px 20px #FF0000;
+			}
+
+			.pad{
+				padding: 5px;
+			}
 			.highlight{
 				color: #E76F51;
 			}
@@ -23,14 +31,46 @@
 			.filename{
 				display:inline-block; 
 			}
+
+			.package{
+				background-color: gray; 
+				border-radius: 10px; 
+				padding: 5px;
+				font-family: monospace;
+			}
+
+			.smaller{
+				font-size: xx-large
+			}
+
+			.box{
+				background-color: rgba(255, 255, 255, 0.2);
+				border-radius: 10px;
+			}
+
+			.blurred .slide-background-content{
+				filter: blur(10px)
+			}
+
+
+			
 		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
+				<section class="blurred" data-background-image="Speaker-Corner-Simon-Nowicki-1981-1200x876.jpg">
+				
+					<h1 class="r-fit-text"><code class="highlight">bookdown</code> in Forschung und Lehre</h1>
+
+					<div>
+						<h1 class="shadow">Ein Plädoyer</h1>
+					</div>
+				</section>
+
 				<section>
-					<section>
-						<h1>Das Problem</h1>
+					<section data-background-image="weather-g33fc2d7cf_1920.jpg">
+						<h1>Was ist das Problem?</h1>
 					</section>
 					<section>
 						Reproducibility?
@@ -66,17 +106,16 @@
 				</section>
 
 				<section>
-					<section>
-						<h1>Die Lösung</h1>
+					<section data-background-image="clouds-g52acb75b4_1920.jpg">
+						<h1>Was ist die Lösung?</h1>
 					</section>
 					<section>
-						<img data-src="knuth.jpg" alt="" style="width: 40%;">
+						<img data-src="knuth.jpg" style="width: 40%;">
 					</section>
 					<section>
 						<div>
-							<img data-src="rmarkdown-logo.png" style="width: 300px;" alt="">
-							<img data-src="bookdown-logo.png"  style="width: 300px;" alt="">
-
+							<img data-src="rmarkdown-logo.png" style="width: 300px;" class="card">
+							<img data-src="bookdown-logo.png"  style="width: 300px;" class="card">
 						</div>
 						<ul style="list-style-type: none">
 							<li>PANDOC</li>
@@ -86,8 +125,10 @@
 				</section>
 
 				<section>
-					<section>
-						<h1>Was man tun muss</h1>
+					<section data-background-image="job-ga5110e654_1920.jpg">
+						<h1>Was muss man tun?</h1>
+
+						<em class="fragment">(Spoiler: sehr wenig)</em>
 					</section>
 					<section data-auto-animate>
 						<div class="filename" data-id="filename">brain-vs-bodymass.R</div>
@@ -137,22 +178,36 @@
 					</section>
 				</section>
 				<section>
-					<section>
-						<h1>Was man bekommt</h1>
+					<section data-background-image="happy-birthday-g3ac1731f9_1920.jpg">
+						<h1>Was bekommt man?</h1>
+						<em class="fragment">(Spoiler: sehr viel)</em>
 					</section>
 
 					<section>
-						<img data-src="brain-vs-body-html.png" style="width: 60%;">
+						<img data-src="brain-vs-body-html.png" style="width: 80%;">
 					</section>
 
 					<section>
-						<img data-src="im-still-feeling-skeptical-saturday-night-live.gif" alt="">
+						<img data-src="im-still-feeling-skeptical-saturday-night-live.gif">
 					</section>
 
 					<section>
-						<div>
-							<img data-src="simpleregression37.png" style="width: 40%;" class="card">
-							<img data-src="simpleregression38.png" style="width: 40%;" class="card">
+						<p>die Vorteile:</p>
+						<ul class="smaller">
+							<li class="fragment">Es ist zusammen was zusammen gehört</li> <!--(Maschinen- und Menschensprache)-->
+							<li class="fragment"><em>Proof of self sufficiency</em></li> <!--Knit wird immer in einer neuen Session ausgeführt-->
+							<li class="fragment">Eine Quellcode, viele outputs</li> <!--1:n Beziehung-->
+							<li class="fragment">Zeitgemässe Präsentation (Web 2.0, responsive etc.)</li>
+							<li class="fragment">Quellcode und outputs sind strikte getrennt <em>(I'm looking at you, ipynb)</em></li>
+							<li class="fragment">Sehr wenig overhead (.R ≈ .Rmd)</li>
+						</ul>
+					</section>
+
+
+					<section>
+						<div class="r-hstack">
+							<img data-src="simpleregression37.png" style="width: 50%;" class="card pad">
+							<img data-src="simpleregression38.png" style="width: 50%;" class="card pad">
 						</div>
 						<small> J. Rousseeuw, Annick M. Leroy (1987): Robust Regression and Outlier Detection </small>
 					</section>
@@ -203,36 +258,79 @@
 						</code></pre>
 					</section>
 
-					<!-- Add examples of outputs -->
 					<section>
-						<img data-src="rmarkdownflow.png" alt="">
+						<div class="r-hstack">
+							<img data-src="brain-vs-body-2-1.png" style="width: 50%;" class="card pad">
+							<img data-src="brain-vs-body-2-2.png" style="width: 50%;" class="card pad">
+						</div>
+					</section>
+					
+					
+				</section>
+				<section>
+					<section data-background-image="gears-g61c2bb11b_1920.jpg">
+						<h1>Wie funktionert es?</h1>
 					</section>
 
-					<!-- Explain the workflow (Rmarkdown, knitr, pandoc)-->
-					<!-- How does bookdown extend this?-->
-
-
+					<section>
+						<img data-src="rmarkdownflow.png">
+					</section>
 
 					<section>
-						<img data-src="rstudio.png" alt="">
+						<img data-src="mermaid-diagram-20220608225003.svg">
 					</section>
+
+					<section data-auto-animate>
+						<p>... und was bringt <span class="package">bookdown</span>?!</p>
+					</section>
+					<section data-auto-animate>
+						<p>... und was bringt <span class="package">bookdown</span>?!</p>
+						<ul class="smaller">
+
+							<li class="fragment">Bildunterschriften</li>
+							<li class="fragment">Querverzeichnisse (auf Tabellen, Bilder, Kapitel, Gleichungen...)</li>
+							<li class="fragment">Inhalts-, Bild- und Tabellenverzeichnis</li>
+							<li class="fragment">Theorems & Proofs</li>
+							<li class="fragment">Vereinen mehrerer Rmd-files</li>
+						</ul>
+					</section>
+
+					<section data-background-iframe="https://github.zhaw.ch/pages/hoce/Synthese_Beverin/"></section>
+
+					<!--
+					https://github.zhaw.ch/pages/hoce/Synthese_Beverin/
+					https://github.zhaw.ch/pages/Sihlhoelzlipark/Sihlhoelzlipark_dev/
+					https://erfolgskontrolle.wieselundco.ch/
+
+					<section>
+						<img data-src="rstudio.png">
+					</section>
+					-->					
+				</section>
+				<section>
+					<section data-background-image="problem-g35696dede_1920.jpg">
+						<h1>Und wie teile ich das?</h1>
+					</section>
+					<!--
+						show github pages, github zhaw
+						show github und erfolgskontrolle.wieselundco.ch
+						show rstudio connect der zhaw
+						touch on zhaw-subdomains
+					-->
 				</section>
 			</div>
 		</div>
 
 		<script src="revealjs/dist/reveal.js"></script>
 		<script src="revealjs/plugin/notes/notes.js"></script>
-		<script src="revealjs/plugin/markdown/markdown.js"></script>
 		<script src="revealjs/plugin/highlight/highlight.js"></script>
 		<script>
 			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: [ RevealHighlight, RevealNotes ]
 			});
 		</script>
 	</body>

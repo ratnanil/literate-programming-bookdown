@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Example 4: Brain and Weight Data</title>
+  <meta name="description" content="Example 4: Brain and Weight Data" />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Example 4: Brain and Weight Data" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Example 4: Brain and Weight Data" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Example 4: Brain and Weight Data</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Example 4: Brain and Weight Data</h1>
+</div>
+<p>Table <a href="#tab:table">1</a> presents the brain weight (in grams) and the body weight (in kilograms) of 28 animals (this sample was taken from larger data sets in <span class="citation">Weisberg (1980)</span> and <span class="citation">Jerison (1973)</span>). It is to be investigated whether a larger brain is required to govern a heavier body. A clear picture of the relationship between the logarithms (to the base 10) of these measurements is shown in Figure <a href="#fig:plot">1</a>. This logarithmic transformation was necessary because plotting the original measurements would fail to represent either the smaller or the larger measurements. Indeed, both original variables range over several orders of magnitude. A linear fit to this transformed data would be equivalent to a relationship of the form</p>
+<p><span class="math display">\[\hat{y} = \hat{\Theta}&#39;_2x^{\hat{\Theta_1}}\]</span></p>
+<p>between brain weight (y) and body weight (x).</p>
+<div class="figure"><span style="display:block;" id="fig:plot"></span>
+<img src="brain-vs-body-3_files/figure-html/plot-1.png" alt="Logarithmic brain weight versus logarithmic body weight for 28 animals" width="672" />
+<p class="caption">
+Figure 1: Logarithmic brain weight versus logarithmic body weight for 28 animals
+</p>
+</div>
+<p>Looking at Figure <a href="#fig:plot">1</a>, it seems that this transformation makes things more linear. Another important advantage of the log scale is that the heteroscedasticity disappears.</p>
+<p>The LS fit is given by</p>
+<p><span class="math display">\[\log \hat{y} = 0.49601 \log x + 1.10957\]</span></p>
+<p>(dashed line in Figure <a href="#fig:plot">1</a>). The standard error associated with the slope equals 0.0782, and that of the intercept term is 0.1794. In Section 3, we explained how to construct a confidence interval for the unknown regression parameters. For the present example, n = 28 and p = 2, so one has to use the 97.5% quantile of the t-distribution with 26 degrees of freedom, which equals 2.0555. Using the LS results, a 95% confidence interval for the slope is given by t0.3353; 0.65673. The RLS yields the solid line in Figure <a href="#fig:plot">1</a>, which is a fit with a steeper slope:</p>
+<p><span class="math display">\[\log \hat{y} = 0.75092 \log x + 0.86914\]</span></p>
+<table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:table">Table 1: </span>Table 7. Body and Brain Weight for 28 Animals
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+Body Weight (kg)
+</th>
+<th style="text-align:right;">
+Brain Weight (g)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Mountain beaver
+</td>
+<td style="text-align:right;">
+1.350
+</td>
+<td style="text-align:right;">
+8.1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cow
+</td>
+<td style="text-align:right;">
+465.000
+</td>
+<td style="text-align:right;">
+423.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Grey wolf
+</td>
+<td style="text-align:right;">
+36.330
+</td>
+<td style="text-align:right;">
+119.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Goat
+</td>
+<td style="text-align:right;">
+27.660
+</td>
+<td style="text-align:right;">
+115.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Guinea pig
+</td>
+<td style="text-align:right;">
+1.040
+</td>
+<td style="text-align:right;">
+5.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dipliodocus
+</td>
+<td style="text-align:right;">
+11700.000
+</td>
+<td style="text-align:right;">
+50.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Asian elephant
+</td>
+<td style="text-align:right;">
+2547.000
+</td>
+<td style="text-align:right;">
+4603.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Donkey
+</td>
+<td style="text-align:right;">
+187.100
+</td>
+<td style="text-align:right;">
+419.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Horse
+</td>
+<td style="text-align:right;">
+521.000
+</td>
+<td style="text-align:right;">
+655.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Potar monkey
+</td>
+<td style="text-align:right;">
+10.000
+</td>
+<td style="text-align:right;">
+115.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cat
+</td>
+<td style="text-align:right;">
+3.300
+</td>
+<td style="text-align:right;">
+25.6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Giraffe
+</td>
+<td style="text-align:right;">
+529.000
+</td>
+<td style="text-align:right;">
+680.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Gorilla
+</td>
+<td style="text-align:right;">
+207.000
+</td>
+<td style="text-align:right;">
+406.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Human
+</td>
+<td style="text-align:right;">
+62.000
+</td>
+<td style="text-align:right;">
+1320.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+African elephant
+</td>
+<td style="text-align:right;">
+6654.000
+</td>
+<td style="text-align:right;">
+5712.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Triceratops
+</td>
+<td style="text-align:right;">
+9400.000
+</td>
+<td style="text-align:right;">
+70.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Rhesus monkey
+</td>
+<td style="text-align:right;">
+6.800
+</td>
+<td style="text-align:right;">
+179.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kangaroo
+</td>
+<td style="text-align:right;">
+35.000
+</td>
+<td style="text-align:right;">
+56.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Golden hamster
+</td>
+<td style="text-align:right;">
+0.120
+</td>
+<td style="text-align:right;">
+1.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mouse
+</td>
+<td style="text-align:right;">
+0.023
+</td>
+<td style="text-align:right;">
+0.4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Rabbit
+</td>
+<td style="text-align:right;">
+2.500
+</td>
+<td style="text-align:right;">
+12.1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sheep
+</td>
+<td style="text-align:right;">
+55.500
+</td>
+<td style="text-align:right;">
+175.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jaguar
+</td>
+<td style="text-align:right;">
+100.000
+</td>
+<td style="text-align:right;">
+157.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Chimpanzee
+</td>
+<td style="text-align:right;">
+52.160
+</td>
+<td style="text-align:right;">
+440.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Rat
+</td>
+<td style="text-align:right;">
+0.280
+</td>
+<td style="text-align:right;">
+1.9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Brachiosaurus
+</td>
+<td style="text-align:right;">
+87000.000
+</td>
+<td style="text-align:right;">
+154.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mole
+</td>
+<td style="text-align:right;">
+0.122
+</td>
+<td style="text-align:right;">
+3.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pig
+</td>
+<td style="text-align:right;">
+192.000
+</td>
+<td style="text-align:right;">
+180.0
+</td>
+</tr>
+</tbody>
+</table>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div class="csl-entry">
+Jerison, Harry J. 1973. <span>“Introduction to the Basic Vertebrate Radiation.”</span> In <em>Evolution of the Brain and Intelligence</em>, edited by Harry J. Jerison, 97. Academic Press. https://doi.org/<a href="https://doi.org/10.1016/B978-0-12-385250-2.50012-2">https://doi.org/10.1016/B978-0-12-385250-2.50012-2</a>.
+</div>
+<div class="csl-entry">
+Weisberg, Sanford. 1980. <em>Applied Linear Regression</em>. Vol. 528. John Wiley &amp; Sons.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": false,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
