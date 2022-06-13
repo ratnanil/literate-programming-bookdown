@@ -14,11 +14,11 @@
 		<link rel="stylesheet" href="revealjs/plugin/highlight/monokai.css">
 		<style>
 			.card{
-				box-shadow: 5px 10px #888888;
+				box-shadow: 5px 10px rgba(255, 255, 255, 0.2);
 			}
 
 			.shadow{
-				text-shadow: 20px 20px #FF0000;
+				text-shadow: 2px 2px #000000 !important;
 			}
 
 			.pad{
@@ -49,9 +49,10 @@
 			}
 
 			.blurred .slide-background-content{
-				filter: blur(10px)
+				filter: blur(5px)
 			}
 
+			
 
 			
 		</style>
@@ -59,25 +60,33 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section class="blurred" data-background-image="Speaker-Corner-Simon-Nowicki-1981-1200x876.jpg">
+				<section class="blurred" data-background-image="5790836212_87a89fe3b9_o.jpg">
 				
-					<h1 class="r-fit-text"><code class="highlight">bookdown</code> in Forschung und Lehre</h1>
 
+					<div>
+						<h1 class="r-fit-text shadow"><code class="highlight">bookdown</code> in Forschung und Lehre</h1>
+					</div>
 					<div>
 						<h1 class="shadow">Ein Plädoyer</h1>
 					</div>
+
+					<div>
+
+					</div>
+					<div style="font-size: small; position: relative; bottom: -500%; right: 10px">
+						Image source: <a href="https://www.flickr.com/photos/31363949@N02/5790836212">Leonard Bentley (Flickr)</a>
+					</div>
+
 				</section>
 
 				<section>
 					<section data-background-image="weather-g33fc2d7cf_1920.jpg">
-						<h1>Was ist das Problem?</h1>
+						<h1 class="r-fit-text shadow">Was ist das Problem?</h1>
 					</section>
 					<section>
-						Reproducibility?
+						Reproduzierbarkeit
 					</section>
-					<section data-background-iframe="https://www.youtube.com/embed/s3JldKoA0zw?start=18">
-
-					</section>
+					
 	
 					<section>
 						<div>
@@ -92,6 +101,11 @@
 						</div>
 					</section>
 
+					<!--
+					<section data-background-iframe="https://www.youtube.com/embed/s3JldKoA0zw?start=18">
+					
+					</section>
+					-->
 					<section>
 						Web 2.0?
 					</section>
@@ -107,15 +121,15 @@
 
 				<section>
 					<section data-background-image="clouds-g52acb75b4_1920.jpg">
-						<h1>Was ist die Lösung?</h1>
+						<h1  class="r-fit-text shadow">Was ist die Lösung?</h1>
 					</section>
 					<section>
 						<img data-src="knuth.jpg" style="width: 40%;">
 					</section>
 					<section>
 						<div>
-							<img data-src="rmarkdown-logo.png" style="width: 300px;" class="card">
-							<img data-src="bookdown-logo.png"  style="width: 300px;" class="card">
+							<img data-src="rmarkdown-logo.png" style="width: 150px;">
+							<img data-src="bookdown-logo.png"  style="width: 150px;">
 						</div>
 						<ul style="list-style-type: none">
 							<li>PANDOC</li>
@@ -126,7 +140,7 @@
 
 				<section>
 					<section data-background-image="job-ga5110e654_1920.jpg">
-						<h1>Was muss man tun?</h1>
+						<h1  class="r-fit-text shadow">Was muss man tun?</h1>
 
 						<em class="fragment">(Spoiler: sehr wenig)</em>
 					</section>
@@ -179,7 +193,7 @@
 				</section>
 				<section>
 					<section data-background-image="happy-birthday-g3ac1731f9_1920.jpg">
-						<h1>Was bekommt man?</h1>
+						<h1  class="r-fit-text shadow">Was bekommt man dafür?</h1>
 						<em class="fragment">(Spoiler: sehr viel)</em>
 					</section>
 
@@ -269,7 +283,7 @@
 				</section>
 				<section>
 					<section data-background-image="gears-g61c2bb11b_1920.jpg">
-						<h1>Wie funktionert es?</h1>
+						<h1  class="r-fit-text shadow">Wie funktionert es?</h1>
 					</section>
 
 					<section>
@@ -309,7 +323,7 @@
 				</section>
 				<section>
 					<section data-background-image="problem-g35696dede_1920.jpg">
-						<h1>Und wie teile ich das?</h1>
+						<h1  class="r-fit-text shadow">Und wie teile ich das?</h1>
 					</section>
 					<!--
 						show github pages, github zhaw
@@ -332,6 +346,8 @@
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealHighlight, RevealNotes ]
 			});
+
+			
 		</script>
 	</body>
 </html>
