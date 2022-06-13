@@ -9,3 +9,5 @@ Storyline:
 - 7 min. Grundlagen von Markdown, RMarkdown und Bookdown (Quarto?)
 - 5 min. Publizieren mit Github (Hosten auf zhaw.ch?) / Demo Wieselundco Bericht
 - 5 min. Kurzeinführung R-Packages
+
+Bild speakers corner: https://flashbak.com/a-minor-wonder-of-the-world-speakers-corner-in-london-1981-418695/
