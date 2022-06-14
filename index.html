@@ -52,6 +52,16 @@
 				filter: blur(5px)
 			}
 
+			.slide-show{
+				width: 500px; 
+				height: 300px;
+				background-size: cover;
+				background-position: center;
+			}
+
+			.zhaw{
+				font-variant: small-caps
+			}
 			
 
 			
@@ -84,7 +94,13 @@
 						<h1 class="r-fit-text shadow">Was ist das Problem?</h1>
 					</section>
 					<section>
-						Reproduzierbarkeit
+						Es ist getrennt, was zusammen gehört
+
+						<img data-src="technology-ge6a697104_1280.jpg" alt="">
+
+						<aside class="notes">
+							Die Kommunikation mit den Menschen und die Kommunikation mit der Maschine ist getrennt
+						</aside>
 					</section>
 					
 	
@@ -108,6 +124,8 @@
 					-->
 					<section>
 						Web 2.0?
+
+						<img data-src="interface-g5199e4303_1280.png" alt="">
 					</section>
 					<section>
 						<img data-src="Din-1930233409.jpeg" class="card">
@@ -198,25 +216,33 @@
 					</section>
 
 					<section>
+						<div class="filename" data-id="filename">brain-vs-bodymass.R</div><div data-id="filename2" class="filename highlight">md</div>
+						<pre data-id="animals"><code data-trim class="text" data-line-numbers="">
+							---
+							title: "Brain- vs. body mass"
+							output: html_document
+							---
+
+
+							```{r}
+							library(MASS)
+
+							plot(log10(brain)~log10(body), Animals)
+							
+							fit <- lm(log10(brain)~log10(body), Animals)
+							
+							abline(fit)
+							```
+						</code></pre>
+					</section>
+
+					<section>
 						<img data-src="brain-vs-body-html.png" style="width: 80%;">
 					</section>
 
 					<section>
 						<img data-src="im-still-feeling-skeptical-saturday-night-live.gif">
 					</section>
-
-					<section>
-						<p>die Vorteile:</p>
-						<ul class="smaller">
-							<li class="fragment">Es ist zusammen was zusammen gehört</li> <!--(Maschinen- und Menschensprache)-->
-							<li class="fragment"><em>Proof of self sufficiency</em></li> <!--Knit wird immer in einer neuen Session ausgeführt-->
-							<li class="fragment">Eine Quellcode, viele outputs</li> <!--1:n Beziehung-->
-							<li class="fragment">Zeitgemässe Präsentation (Web 2.0, responsive etc.)</li>
-							<li class="fragment">Quellcode und outputs sind strikte getrennt <em>(I'm looking at you, ipynb)</em></li>
-							<li class="fragment">Sehr wenig overhead (.R ≈ .Rmd)</li>
-						</ul>
-					</section>
-
 
 					<section>
 						<div class="r-hstack">
@@ -230,7 +256,7 @@
 						<pre><code data-trim class="text" data-line-numbers="">
 							---
 							title: "Example 4: Brain and Weight Data"
-							output: html_document
+							output: pdf_document
 							---
 							
 							Table 7 presents the brain weight (in grams) and the body weight (in kilograms) of 28 animals. (This sample was taken from larger data sets in Weisberg 1980 and Jerison 1973.) It is to be investigated whether a larger brain is required to govern a heavier body. A clear picture of the relationship between the logarithms (to the base 10) of these measurements is shown in Figure 7. This logarithmic transformation was necessary because plotting the original measurements would fail to represent either the smaller or the larger measurements. Indeed, both original variables range over several orders of magnitude. A linear fit to this transformed data would be equivalent to a relationship of the form
@@ -278,6 +304,30 @@
 							<img data-src="brain-vs-body-2-2.png" style="width: 50%;" class="card pad">
 						</div>
 					</section>
+
+					<section>
+						<div class="r-hstack">
+							<div style="width: 49%;">
+								<p>die Vorteile:</p>
+								<ul class="smaller" style="padding: 5px;">
+									<li class="fragment fade-in-then-semi-out" data-fragment-index="1">Es ist zusammen, was zusammen gehört</li> <!--(Maschinen- und Menschensprache)-->
+									<li class="fragment fade-in-then-semi-out" data-fragment-index="2">Es ist getrennt, was was getrennt gehört</li>
+									<li class="fragment fade-in-then-semi-out" data-fragment-index="3">Minimaler test</li> <!--Knit wird immer in einer neuen Session ausgeführt-->
+									<li class="fragment fade-in-then-semi-out" data-fragment-index="4">Eine Quellcode, viele Outputs</li> <!--1:n Beziehung-->
+									<li class="fragment fade-in-then-semi-out" data-fragment-index="5">Web 2.0</li>
+								</ul>
+								</div>
+								<div style="width: 49%;" class="r-stack">
+									<div class="fragment fade-in-then-out slide-show" data-fragment-index="1" style="background-image: url(technology-ge6a697104_1280.jpg);"></div>
+									<div class="fragment fade-in-then-out slide-show" data-fragment-index="2" style="background-image: url(keyimage.gif)"></div>
+									<div class="fragment fade-in-then-out slide-show" data-fragment-index="3" style="background-image: url(egg-g7865a4c8d_1280.jpg)"></div>
+									<div class="fragment fade-in-then-out slide-show" data-fragment-index="4" style="background-image: url(cea57a18548065.562cb4b71fe5d-1327398768.jpeg)"></div>
+									<div class="fragment fade-in-then-out slide-show" data-fragment-index="5" style="background-image: url(interface-g5199e4303_1280.png)"></div>
+
+								</div>
+						</div>
+
+					</section>
 					
 					
 				</section>
@@ -302,7 +352,7 @@
 						<ul class="smaller">
 
 							<li class="fragment">Bildunterschriften</li>
-							<li class="fragment">Querverzeichnisse (auf Tabellen, Bilder, Kapitel, Gleichungen...)</li>
+							<li class="fragment">Querverweise (auf Tabellen, Bilder, Kapitel, Gleichungen...)</li>
 							<li class="fragment">Inhalts-, Bild- und Tabellenverzeichnis</li>
 							<li class="fragment">Theorems & Proofs</li>
 							<li class="fragment">Vereinen mehrerer Rmd-files</li>
@@ -325,6 +375,32 @@
 					<section data-background-image="problem-g35696dede_1920.jpg">
 						<h1  class="r-fit-text shadow">Und wie teile ich das?</h1>
 					</section>
+
+					<section>
+						<p>Github Pages</p>
+
+						<ul class="smaller">
+							<li class="fragment">Kostenloses webhosing via Github</li>
+							<ol>
+								<li class="fragment">Files in <code>docs</code>-folder</li>
+								<li class="fragment">Files im <code>gh-pages</code>-branch</li>
+							</ol>
+							<li class="fragment">Domains (automatisch)</li>
+							<ol>
+								<li class="fragment">github.com: <a>username.github.io/reponame</a></li>
+								<li class="fragment">github.zhaw.ch: <a>github.zhaw.ch/pages/username/reponame</a></li>
+							</ol>
+							<li class="fragment">Custom domains</li>
+							<ol>
+								<li class="fragment"><span class="zhaw">zhaw</span> URL shortener <em>(coming soon, <a href="https://u.ethz.ch/">demo</a> )</em></li>
+								<li class="fragment">CNAME Eintrag (siehe <a href="https://erfolgskontrolle.wieselundco.ch/">erfolgskontrolle.wieselundco.ch</a>)</li>
+								<li class="fragment"><span class="zhaw">zhaw</span> Kubernetes w/ Jenkins (coming soon, see <a href="https://servicedesk.zhaw.ch/tas/public/ssp/content/detail/incident?unid=587cdab2e2c641f290c772d4b1529e33">IN2203-3610</a>)</li>
+							</ol>
+						</ul>
+
+						
+					</section>
+
 					<!--
 						show github pages, github zhaw
 						show github und erfolgskontrolle.wieselundco.ch
