@@ -8,3 +8,4 @@ pdftoppm report.pdf report16 -singlefile -f 16 -png
 pdftoppm simple_regression.pdf simpleregression37 -singlefile -f 37 -png
 pdftoppm simple_regression.pdf simpleregression38 -singlefile -f 38 -png
 pdftoppm brain-vs-body-2.pdf brain-vs-body-2 -png
+pdftoppm knuthweb.pdf knuthweb -singlefile -f 1 -png
