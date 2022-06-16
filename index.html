@@ -50,12 +50,12 @@
 			border-radius: 10px;
 		}
 
-		.old-output{
+		.old-output {
 			background-color: rgba(37, 128, 115, 0.6);
 			height: 300px;
 		}
 
-		.new-output{
+		.new-output {
 			background-color: rgba(231, 111, 81, 0.6);
 			height: 300px;
 		}
@@ -75,11 +75,11 @@
 			font-variant: small-caps
 		}
 
-		blockquote::before{
+		blockquote::before {
 			content: "“";
 		}
 
-		blockquote::after{
+		blockquote::after {
 			content: "“";
 		}
 
@@ -97,7 +97,7 @@
 			/*width: 1219px;*/
 			/*height: 1730px;*/
 			/*width: 100%;       
-			padding-top: 141%;  <- würde die grösse automatisch anpassen. geht mit overlay nicht*/ 
+			padding-top: 141%;  <- würde die grösse automatisch anpassen. geht mit overlay nicht*/
 			width: 500px;
 			height: 700px;
 			background-image: url(knuthweb.png);
@@ -145,20 +145,23 @@
 	<div class="reveal">
 		<div class="slides">
 			<section>
-			<section class="blurred" data-background-image="5790836212_87a89fe3b9_o.jpg">
+				<section class="blurred" data-background-image="5790836212_87a89fe3b9_o.jpg">
 
-				<div>
-					<h1 class="r-fit-text shadow"><code class="highlight">bookdown</code> in Forschung und Lehre</h1>
-				</div>
-				<div>
-					<h1 class="shadow">Ein Plädoyer</h1>
-				</div>
-			
-				<div style="font-size: small; position: relative; bottom: -500%; right: 10px">Image source: <a href="https://www.flickr.com/photos/31363949@N02/5790836212">Leonard Bentley (Flickr)</a></div>
+					<div>
+						<h1 class="r-fit-text shadow"><code class="highlight">bookdown</code> in Forschung und Lehre
+						</h1>
+					</div>
+					<div>
+						<h1 class="shadow">Ein Plädoyer</h1>
+					</div>
 
+					<div style="font-size: small; position: relative; bottom: -500%; right: 10px">Image source: <a
+							href="https://www.flickr.com/photos/31363949@N02/5790836212">Leonard Bentley (Flickr)</a>
+					</div>
+
+				</section>
+				<section data-background-iframe="https://www.zhaw.ch/de/ueber-uns/person/rata/"></section>
 			</section>
-			<section data-background-iframe="https://www.zhaw.ch/de/ueber-uns/person/rata/"></section>
-		</section>
 
 			<section>
 				<section data-background-image="weather-g33fc2d7cf_1920.jpg">
@@ -220,11 +223,9 @@
 
 					<aside class="notes">
 						<ul>
+							<li>Communications of the ACM fragt 1986 Jon Bentley: When was the last time you spent a pleasant evening in a comfortable chair, reading a good program?</li>
 							<li>1984 eingeführt durch Knuth</li>
-							<li>When was the last time you spent a pleasant evening in a comfortable chair, reading a
-								good program?</li>
-							<li>I chose the name WEB partly because it was one of the few three-letter words of English
-								that hadn’t already been applied to computers.</li>
+
 						</ul>
 					</aside>
 				</section>
@@ -239,10 +240,20 @@
 					</div>
 
 					<div style="width: 50%; position: absolute; right: 0" class="r-stack">
-						<blockquote data-fragment-index="1" class="smaller fragment fade-in-then-out">Let us change our traditional attitude to the construction of programs: Instead of 	imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.</blockquote>
-						<blockquote data-fragment-index="2" class="smaller fragment fade-in-then-out">I’ve stumbled across a method of composing programs that excites me very much. In fact, my enthusiasm is so great that I must warn the reader to discount much of what I shall say as the ravings of a fanatic who thinks he has just seen a great light.</blockquote>
-						<blockquote data-fragment-index="3" class="smaller fragment fade-in-then-out">By coining the phrase 'literate programming', I am imposing a moral commitment on everyone who hears the term; surely nobody wants to admit writing an illiterate program.</blockquote>
-						<blockquote data-fragment-index="4" class="smaller fragment fade-in-then-out">I chose the name WEB partly because it was one of the few three-letter words of English that hadn’t already been applied to computers.</blockquote>
+						<blockquote data-fragment-index="1" class="smaller fragment fade-in-then-out">Let us change our
+							traditional attitude to the construction of programs: Instead of imagining that our main
+							task is to instruct a computer what to do, let us concentrate rather on explaining to human
+							beings what we want a computer to do.</blockquote>
+						<blockquote data-fragment-index="2" class="smaller fragment fade-in-then-out">I’ve stumbled
+							across a method of composing programs that excites me very much. In fact, my enthusiasm is
+							so great that I must warn the reader to discount much of what I shall say as the ravings of
+							a fanatic who thinks he has just seen a great light.</blockquote>
+						<blockquote data-fragment-index="3" class="smaller fragment fade-in-then-out">By coining the
+							phrase 'literate programming', I am imposing a moral commitment on everyone who hears the
+							term; surely nobody wants to admit writing an illiterate program.</blockquote>
+						<blockquote data-fragment-index="4" class="smaller fragment fade-in-then-out">I chose the name
+							WEB partly because it was one of the few three-letter words of English that hadn’t already
+							been applied to computers.</blockquote>
 					</div>
 					<aside class="notes">
 						<ul>
@@ -293,7 +304,8 @@
 						</code></pre>
 				</section>
 				<section data-auto-animate>
-					<div class="filename" data-id="filename">brain-vs-bodymass.R</div><div data-id="filename2" class="filename highlight">md</div>
+					<div class="filename" data-id="filename">brain-vs-bodymass.R</div>
+					<div data-id="filename2" class="filename highlight">md</div>
 					<pre data-id="animals"><code data-trim class="text" data-line-numbers="|1|9">
 							```{r}
 							library(MASS)
@@ -306,12 +318,13 @@
 							```
 						</code></pre>
 
-						<aside class="notes">
-							Gravis / Backtick / Hochkomma
-						</aside>
+					<aside class="notes">
+						Gravis / Backtick / Hochkomma
+					</aside>
 				</section>
 				<section data-auto-animate>
-					<div class="filename" data-id="filename">brain-vs-bodymass.R</div><div data-id="filename2" class="filename highlight">md</div>
+					<div class="filename" data-id="filename">brain-vs-bodymass.R</div>
+					<div data-id="filename2" class="filename highlight">md</div>
 					<pre data-id="animals"><code data-trim class="text" data-line-numbers="1-4">
 							---
 							title: "Brain- vs. body mass"
@@ -438,17 +451,6 @@
 
 							
 						</code></pre>
-						<!--
-					</div>
-
-					
-					<div class="v-hstack">
-						<img data-src="simpleregression37.png">
-					</div>
-
-				</div>
-				-->
-
 					<span class="fragment package">🧶 knit</span>
 
 				</section>
@@ -464,15 +466,9 @@
 					<div class="r-hstack items-strech">
 						<img data-src="simpleregression37.png" class="pad old-output">
 						<img data-src="simpleregression38.png" class="pad old-output">
-						<img data-src="brain-vs-body-2-1.png"  class="pad new-output">
-						<img data-src="brain-vs-body-2-2.png"  class="pad new-output">
+						<img data-src="brain-vs-body-2-1.png" class="pad new-output">
+						<img data-src="brain-vs-body-2-2.png" class="pad new-output">
 					</div>
-					<!--
-					<div class="r-hstack">
-						<img data-src="brain-vs-body-2-1.png" style="width: 30%;" class="pad">
-						<img data-src="brain-vs-body-2-2.png" style="width: 30%;" class="pad">
-					</div>
-					-->
 				</section>
 
 				<section>
@@ -480,24 +476,38 @@
 						<div style="width: 49%;">
 							<p>die Vorteile:</p>
 							<ul class="smaller" style="padding: 5px;">
-								<li class="fragment fade-in-then-semi-out" data-fragment-index="1">Es ist zusammen, was zusammen gehört</li>
-								<li class="fragment fade-in-then-semi-out" data-fragment-index="2">Es ist getrennt, was was getrennt gehört</li>
-								<li class="fragment fade-in-then-semi-out" data-fragment-index="3">Minimaler test, kein <em>hidden state</em></li>
-								<li class="fragment fade-in-then-semi-out" data-fragment-index="4">Eine Quellcode, viele Outputs</li>
-								<li class="fragment fade-in-then-semi-out" data-fragment-index="5">Web 2.0 kompatibel</li>
-								<li class="fragment fade-in-then-semi-out" data-fragment-index="6">Literaturverwaltung</li>
-								<li class="fragment fade-in-then-semi-out" data-fragment-index="7">Plaintext files (= Versioncontrol)</li>
+								<li class="fragment fade-in-then-semi-out" data-fragment-index="1">Es ist zusammen, was
+									zusammen gehört</li>
+								<li class="fragment fade-in-then-semi-out" data-fragment-index="2">Es ist getrennt, was
+									was getrennt gehört</li>
+								<li class="fragment fade-in-then-semi-out" data-fragment-index="3">Minimaler test, kein
+									<em>hidden state</em></li>
+								<li class="fragment fade-in-then-semi-out" data-fragment-index="4">Eine Quellcode, viele
+									Outputs</li>
+								<li class="fragment fade-in-then-semi-out" data-fragment-index="5">Web 2.0 kompatibel
+								</li>
+								<li class="fragment fade-in-then-semi-out" data-fragment-index="6">Literaturverwaltung
+								</li>
+								<li class="fragment fade-in-then-semi-out" data-fragment-index="7">Plaintext files (=
+									Versioncontrol)</li>
 
 							</ul>
 						</div>
 						<div style="width: 49%;" class="r-stack">
-							<div class="fragment fade-in-then-out slide-show" data-fragment-index="1" style="background-image: url(technology-ge6a697104_1280.jpg);"></div>
-							<div class="fragment fade-in-then-out slide-show" data-fragment-index="2" style="background-image: url(joelgrus.png)"></div>
-							<div class="fragment fade-in-then-out slide-show" data-fragment-index="3" style="background-image: url(egg-g7865a4c8d_1280.jpg)"></div>
-							<div class="fragment fade-in-then-out slide-show" data-fragment-index="4" style="background-image: url(cea57a18548065.562cb4b71fe5d-1327398768.jpeg)"></div>
-							<div class="fragment fade-in-then-out slide-show" data-fragment-index="5" style="background-image: url(interface-g5199e4303_1280.png)"></div>
-							<div class="fragment fade-in-then-out slide-show" data-fragment-index="6" style="background-image: url(book-g0c6c17303_1280.jpg)"></div>
-							<div class="fragment fade-in-then-out slide-show" data-fragment-index="7" style="background-image: url(river-datavis.webp)"></div>
+							<div class="fragment fade-in-then-out slide-show" data-fragment-index="1"
+								style="background-image: url(technology-ge6a697104_1280.jpg);"></div>
+							<div class="fragment fade-in-then-out slide-show" data-fragment-index="2"
+								style="background-image: url(joelgrus.png)"></div>
+							<div class="fragment fade-in-then-out slide-show" data-fragment-index="3"
+								style="background-image: url(egg-g7865a4c8d_1280.jpg)"></div>
+							<div class="fragment fade-in-then-out slide-show" data-fragment-index="4"
+								style="background-image: url(cea57a18548065.562cb4b71fe5d-1327398768.jpeg)"></div>
+							<div class="fragment fade-in-then-out slide-show" data-fragment-index="5"
+								style="background-image: url(interface-g5199e4303_1280.png)"></div>
+							<div class="fragment fade-in-then-out slide-show" data-fragment-index="6"
+								style="background-image: url(book-g0c6c17303_1280.jpg)"></div>
+							<div class="fragment fade-in-then-out slide-show" data-fragment-index="7"
+								style="background-image: url(river-datavis.webp)"></div>
 						</div>
 					</div>
 
@@ -537,21 +547,23 @@
 				<section data-auto-animate>
 					<p>... und was ist eigentlich <span class="package">quarto</span>?!</p>
 					<ul class="smaller">
-						<li class="fragment">Rmarkdown 2.0</li>	
-						<li class="fragment">Kein RPackage sondern ein CLI</li>	
-						<li class="fragment">Language agnostic (R, Python, Julia, JavaScript and more to come)</li>	
-						<li class="fragment">Multi engine support (knitr, Jupyter, observable and more to come)</li>	
-						<li class="fragment">Rückwärtskompatibel (nicht 100%)</li>	
-						<li class="fragment">Inkludiert <span class="package">bookdown</span></li>	
-						
+						<li class="fragment">Rmarkdown 2.0</li>
+						<li class="fragment">Kein RPackage sondern ein CLI</li>
+						<li class="fragment">Language agnostic (R, Python, Julia, JavaScript and more to come)</li>
+						<li class="fragment">Multi engine support (knitr, Jupyter, observable and more to come)</li>
+						<li class="fragment">Rückwärtskompatibel (nicht 100%)</li>
+						<li class="fragment">Inkludiert <span class="package">bookdown</span></li>
 
-										
+
+
 					</ul>
 				</section>
 				<section>
 					<div class="r-vstack">
-						<div class="fragment"><span class="package">Rmarkdown</span>: <img style="width: 1000px" data-src="rmarkdownflow.png"></div>
-						<div class="fragment"><span class="package">Quarto</span>: <img style="width: 1000px" data-src="rstudio-qmd-how-it-works.png"></div>
+						<div class="fragment"><span class="package">Rmarkdown</span>: <img style="width: 1000px"
+								data-src="rmarkdownflow.png"></div>
+						<div class="fragment"><span class="package">Quarto</span>: <img style="width: 1000px"
+								data-src="rstudio-qmd-how-it-works.png"></div>
 					</div>
 				</section>
 			</section>
@@ -591,13 +603,6 @@
 
 
 				</section>
-
-				<!--
-						show github pages, github zhaw
-						show github und erfolgskontrolle.wieselundco.ch
-						show rstudio connect der zhaw
-						touch on zhaw-subdomains
-					-->
 			</section>
 
 			<section>
@@ -652,7 +657,9 @@
 				<section data-transition="fade" data-background-image="thank-you-g6e4812ec3_1920.jpg" class="blurred">
 
 					<h1 class="r-fit-text shadow">slides verfügbar unter:</h1>
-					<a style="background-color: rgba(255, 255, 255, 0.4); padding: 20px; border-radius: 20px" class="r-fit-text shadow" href="https://www.ratnaweera.xyz/zhaw-statistiker-2022/">ratnaweera.xyz/zhaw-statistiker-2022</a>
+					<a style="background-color: rgba(255, 255, 255, 0.4); padding: 20px; border-radius: 20px"
+						class="r-fit-text shadow"
+						href="https://www.ratnaweera.xyz/zhaw-statistiker-2022/">ratnaweera.xyz/zhaw-statistiker-2022</a>
 
 				</section>
 			</section>
@@ -666,11 +673,8 @@
 	<script src="revealjs/plugin/notes/notes.js"></script>
 	<script src="revealjs/plugin/highlight/highlight.js"></script>
 	<script>
-		// More info about initialization & config:
 		Reveal.initialize({
 			hash: true,
-
-			// Learn about plugins: https://revealjs.com/plugins/
 			plugins: [RevealHighlight, RevealNotes]
 		});
 
