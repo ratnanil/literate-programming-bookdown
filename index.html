@@ -50,6 +50,16 @@
 			border-radius: 10px;
 		}
 
+		.old-output{
+			background-color: rgba(37, 128, 115, 0.6);
+			height: 300px;
+		}
+
+		.new-output{
+			background-color: rgba(231, 111, 81, 0.6);
+			height: 300px;
+		}
+
 		.blurred .slide-background-content {
 			filter: blur(5px)
 		}
@@ -65,19 +75,29 @@
 			font-variant: small-caps
 		}
 
+		blockquote::before{
+			content: "“";
+		}
+
+		blockquote::after{
+			content: "“";
+		}
+
 		#knuthweb {
 			width: 50%;
 			position: absolute;
 			left: 0;
+			/*  <-- würde das div zentrieren
 			right: 0;
 			margin: auto;
+			*/
 		}
 
 		#knuthweb>.imgdiv {
 			/*width: 1219px;*/
 			/*height: 1730px;*/
-			/*width: 100%;
-				padding-top: 141%;*/
+			/*width: 100%;       
+			padding-top: 141%;  <- würde die grösse automatisch anpassen. geht mit overlay nicht*/ 
 			width: 500px;
 			height: 700px;
 			background-image: url(knuthweb.png);
@@ -215,14 +235,19 @@
 				<section>
 					<div id="knuthweb">
 						<div class="imgdiv">
-							<div class="fragment overlay" id="idea"></div>
-							<div class="fragment overlay" id="enthusiasm"></div>
-							<div class="fragment overlay" id="malice"></div>
-							<div class="fragment overlay" id="web"></div>
+							<div class="fragment overlay" data-fragment-index="1" id="idea"></div>
+							<div class="fragment overlay" data-fragment-index="2" id="enthusiasm"></div>
+							<div class="fragment overlay" data-fragment-index="3" id="malice"></div>
+							<div class="fragment overlay" data-fragment-index="4" id="web"></div>
 						</div>
-
 					</div>
 
+					<div style="width: 50%; position: absolute; right: 0" class="r-stack">
+						<blockquote data-fragment-index="1" class="smaller fragment fade-in-then-out">Let us change our traditional attitude to the construction of programs: Instead of 	imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do.</blockquote>
+						<blockquote data-fragment-index="2" class="smaller fragment fade-in-then-out">I’ve stumbled across a method of composing programs that excites me very much. In fact, my enthusiasm is so great that I must warn the reader to discount much of what I shall say as the ravings of a fanatic who thinks he has just seen a great light.</blockquote>
+						<blockquote data-fragment-index="3" class="smaller fragment fade-in-then-out">By coining the phrase 'literate programming', I am imposing a moral commitment on everyone who hears the term; surely nobody wants to admit writing an illiterate program.</blockquote>
+						<blockquote data-fragment-index="4" class="smaller fragment fade-in-then-out">I chose the name WEB partly because it was one of the few three-letter words of English that hadn’t already been applied to computers.</blockquote>
+					</div>
 					<aside class="notes">
 						<ul>
 							<li>Let us change our traditional attitude to the construction of programs: Instead of
@@ -272,8 +297,7 @@
 						</code></pre>
 				</section>
 				<section data-auto-animate>
-					<div class="filename" data-id="filename">brain-vs-bodymass.R</div>
-					<div data-id="filename2" class="filename highlight">md</div>
+					<div class="filename" data-id="filename">brain-vs-bodymass.R</div><div data-id="filename2" class="filename highlight">md</div>
 					<pre data-id="animals"><code data-trim class="text" data-line-numbers="|1|9">
 							```{r}
 							library(MASS)
@@ -285,10 +309,13 @@
 							abline(fit)
 							```
 						</code></pre>
+
+						<aside class="notes">
+							Gravis / Backtick / Hochkomma
+						</aside>
 				</section>
 				<section data-auto-animate>
-					<div class="filename" data-id="filename">brain-vs-bodymass.R</div>
-					<div data-id="filename2" class="filename highlight">md</div>
+					<div class="filename" data-id="filename">brain-vs-bodymass.R</div><div data-id="filename2" class="filename highlight">md</div>
 					<pre data-id="animals"><code data-trim class="text" data-line-numbers="1-4">
 							---
 							title: "Brain- vs. body mass"
@@ -366,7 +393,12 @@
 				</section>
 
 				<section>
-					<pre><code data-trim class="text" data-line-numbers="|3|6|8|12-16|19-25|25-35|37-40">
+					<!--
+					<div class="r-hstack">
+					<div style="width: 60%">
+
+					-->
+					<pre><code data-trim class="text" data-line-numbers="|2|3|6|8|12-16|19-25|25-35|37-40">
 							---
 							title: "Example 4: Brain and Weight Data"
 							output: pdf_document
@@ -410,16 +442,41 @@
 
 							
 						</code></pre>
+						<!--
+					</div>
+
+					
+					<div class="v-hstack">
+						<img data-src="simpleregression37.png">
+					</div>
+
+				</div>
+				-->
 
 					<span class="fragment package">🧶 knit</span>
 
 				</section>
 
-				<section>
+				<section data-auto-animate>
 					<div class="r-hstack">
 						<img data-src="brain-vs-body-2-1.png" style="width: 50%;" class="card pad">
 						<img data-src="brain-vs-body-2-2.png" style="width: 50%;" class="card pad">
 					</div>
+				</section>
+
+				<section data-auto-animate>
+					<div class="r-hstack items-strech">
+						<img data-src="simpleregression37.png" class="pad old-output">
+						<img data-src="simpleregression38.png" class="pad old-output">
+						<img data-src="brain-vs-body-2-1.png"  class="pad new-output">
+						<img data-src="brain-vs-body-2-2.png"  class="pad new-output">
+					</div>
+					<!--
+					<div class="r-hstack">
+						<img data-src="brain-vs-body-2-1.png" style="width: 30%;" class="pad">
+						<img data-src="brain-vs-body-2-2.png" style="width: 30%;" class="pad">
+					</div>
+					-->
 				</section>
 
 				<section>
@@ -510,13 +567,13 @@
 					<p>Website hosting</p>
 
 					<ul>
-						<li>Normaler Webserver</li>
-						<li>Github (Pages)</li>
+						<li class="fragment">Normaler Webserver</li>
+						<li class="fragment">GitHub (github.zhaw.ch)</li>
 						<ul class="smaller">
 							<li class="fragment">html-Files in <code>docs</code>-folder oder im
 								<code>gh-pages</code>-branch
 							</li>
-							<li class="fragment">github.zhaw.ch: <a>github.zhaw.ch/pages/username/reponame</a></li>
+							<li class="fragment">URL: <a>github.zhaw.ch/pages/username/reponame</a></li>
 						</ul>
 						<li class="fragment">Custom domains</li>
 						<ul class="smaller">
