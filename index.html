@@ -144,8 +144,8 @@
 <body>
 	<div class="reveal">
 		<div class="slides">
+			<section>
 			<section class="blurred" data-background-image="5790836212_87a89fe3b9_o.jpg">
-
 
 				<div>
 					<h1 class="r-fit-text shadow"><code class="highlight">bookdown</code> in Forschung und Lehre</h1>
@@ -153,16 +153,12 @@
 				<div>
 					<h1 class="shadow">Ein Plädoyer</h1>
 				</div>
-
-				<div>
-
-				</div>
-				<div style="font-size: small; position: relative; bottom: -500%; right: 10px">
-					Image source: <a href="https://www.flickr.com/photos/31363949@N02/5790836212">Leonard Bentley
-						(Flickr)</a>
-				</div>
+			
+				<div style="font-size: small; position: relative; bottom: -500%; right: 10px">Image source: <a href="https://www.flickr.com/photos/31363949@N02/5790836212">Leonard Bentley (Flickr)</a></div>
 
 			</section>
+			<section data-background-iframe="https://www.zhaw.ch/de/ueber-uns/person/rata/"></section>
+		</section>
 
 			<section>
 				<section data-background-image="weather-g33fc2d7cf_1920.jpg">
@@ -538,15 +534,26 @@
 
 				<section data-background-iframe="https://github.zhaw.ch/pages/hoce/Synthese_Beverin/"></section>
 
-				<!--
-					https://github.zhaw.ch/pages/hoce/Synthese_Beverin/
-					https://github.zhaw.ch/pages/Sihlhoelzlipark/Sihlhoelzlipark_dev/
-					https://erfolgskontrolle.wieselundco.ch/
+				<section data-auto-animate>
+					<p>... und was ist eigentlich <span class="package">quarto</span>?!</p>
+					<ul class="smaller">
+						<li class="fragment">Rmarkdown 2.0</li>	
+						<li class="fragment">Kein RPackage sondern ein CLI</li>	
+						<li class="fragment">Language agnostic (R, Python, Julia, JavaScript and more to come)</li>	
+						<li class="fragment">Multi engine support (knitr, Jupyter, observable and more to come)</li>	
+						<li class="fragment">Rückwärtskompatibel (nicht 100%)</li>	
+						<li class="fragment">Inkludiert <span class="package">bookdown</span></li>	
+						
 
-					<section>
-						<img data-src="rstudio.png">
-					</section>
-					-->
+										
+					</ul>
+				</section>
+				<section>
+					<div class="r-vstack">
+						<div class="fragment"><span class="package">Rmarkdown</span>: <img style="width: 1000px" data-src="rmarkdownflow.png"></div>
+						<div class="fragment"><span class="package">Quarto</span>: <img style="width: 1000px" data-src="rstudio-qmd-how-it-works.png"></div>
+					</div>
+				</section>
 			</section>
 			<section>
 				<section data-background-image="problem-g35696dede_1920.jpg">
@@ -638,7 +645,17 @@
 				</section>
 
 			</section>
-			<section data-background-image="thank-you-g6e4812ec3_1920.jpg"></section>
+
+			<section>
+				<section data-transition="fade" data-background-image="thank-you-g6e4812ec3_1920.jpg"></section>
+
+				<section data-transition="fade" data-background-image="thank-you-g6e4812ec3_1920.jpg" class="blurred">
+
+					<h1 class="r-fit-text shadow">slides verfügbar unter:</h1>
+					<a  class="r-fit-text shadow" href="https://www.ratnaweera.xyz/zhaw-statistiker-2022/">ratnaweera.xyz/zhaw-statistiker-2022</a>
+
+				</section>
+			</section>
 
 
 
